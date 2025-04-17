@@ -33,6 +33,7 @@ export default class jobList{
     }
 
 
+
     renderlist(list){
         /**invoke the renderwithtemplate function to render the list */
         renderlistwithtemplate(joblist,this.listElement,list)

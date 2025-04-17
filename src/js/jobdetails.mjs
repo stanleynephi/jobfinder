@@ -1,3 +1,5 @@
+import { getlocalstorage, savetolocalstorage } from "./utilities.mjs"
+
 /**create template to contain job information and job details */
 function jobdetails(job){
     return `
@@ -11,6 +13,8 @@ function jobdetails(job){
                 <div>${job[0].description}</div>
                 <p><a href="${job[0].url}" target="_blank">View Full Job Posting And Apply</a></p>
             </div>
+            <button class="add_to_saved" data-id="${job.id}" style="background-color: #007BFF; color: white;">Save</button>
+
         </div>
     `
 }
@@ -31,11 +35,32 @@ export default class JobInformation{
             this.job = await this.datasource.getData(this.job_name)
             console.log(this.job)
             this.renderjobdetails("section")
+            document.querySelector(".add_to_saved").addEventListener(
+                "click",
+                this.addtojob.bind(this)
+            )
         } catch (error) {
             
         }
 
         return this.job
+    }
+
+    /**function to add to saved job */
+    addtojob(job){
+        let savedjob = getlocalstorage("saved-job")
+        console.log(job)
+        if(!Array.isArray("saved-job")){
+            savedjob = []
+        }
+        savedjob.push(this.job)
+        savetolocalstorage("saved-job",savedjob)
+        
+    }
+
+    addtosavedhandler(e){
+        const job = this.job;
+        this.addtojob(job)
     }
 
 

@@ -59,3 +59,15 @@ export function renderwithtemplate(template,parentelement,data,callback){
     callback(data);
   }
 }
+
+/**create a function to add liked jobs to the local storage. */
+export function getlocalstorage(key){
+  /**return the data from the local storage in a json format */
+  return JSON.parse(localStorage.getItem(key))
+}
+
+
+/**saving items to the local storage */
+export function savetolocalstorage(key,data){
+  localStorage.setItem(key,JSON.stringify(data))
+}
