@@ -1,9 +1,9 @@
 /**create template to contain job information and job details */
 function jobdetails(job){
     return `
-        <div>
+        <div class="job-content-wrapper">
             <img src="${job[0].company_logo}" alt="${job[0].company_name}">
-            <div>
+            <div class="job-info">
                 <h1>${job[0].company_name}</h1>
                 <h2>${job[0].title}</h2>
                 <p><strong>Location:</strong> ${job[0].candidate_required_location}</p>
