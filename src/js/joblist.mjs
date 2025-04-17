@@ -9,7 +9,7 @@ function joblist(job){
                 <h3>${job.title}</h3>
                 <p><strong>Company:</strong> ${job.company_name}</p>
                 <p><strong>Location:</strong> ${job.candidate_required_location}</p>
-                <a href="/jobpage/job_page.html?job=${job.title}">View Job</a>
+                <a href="/jobpage/index.html?job=${job.title}">View Job</a>
             </li>
     `
 }
