@@ -13,7 +13,7 @@ export default defineConfig({
         profile: resolve(__dirname, "src/profile/index.html"),
         contact: resolve(__dirname, "src/contact/index.html"),
         jobs: resolve(__dirname, "src/job/index.html"),
-        jobdetails: resolve(__dirname,"src/jobpage/index.html"),
+        jobdetails: resolve(__dirname,"src/jobpage/index.html")
       },
     },
   },
